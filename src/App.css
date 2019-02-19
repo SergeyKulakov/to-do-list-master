@@ -1,0 +1,186 @@
+.App {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;  
+  color: white;
+  background-color: #EF313F;
+  background-image: linear-gradient(to bottom left, #EF313F, #F83138);
+}
+
+.App-content {
+  width: 900px;
+  padding: 15px 30px;
+  background-color: #FD6F55;
+  background-image: url("orange.png");
+  background-image: url("orange.png"), linear-gradient(to bottom left, #FD3142, #FD6F55);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-box-shadow: 0px -5px 48px 5px rgba(0,0,0,0.81);
+  -moz-box-shadow: 0px -5px 48px 5px rgba(0,0,0,0.81);
+  box-shadow: 0px -5px 48px 5px rgba(0,0,0,0.81);
+  overflow-y: auto;
+}  
+
+input[type="text"]{
+  width: 80%;
+  margin: 8px 0;
+  padding: 12px 20px;
+  line-height: 40px;
+  font-size: 24px;
+  border: 1px solid white;
+  border-radius: 25px 0 0 25px;
+  box-sizing: border-box;
+}
+
+button{
+  font-size: 24px;
+  color: white;
+  background: none;
+  border: 1px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  color: #F84C4F;
+  background: white;
+  opacity: 0.8;
+}
+
+.add-btn{
+  width: 20%;
+  padding: 12px 20px;
+  line-height: 40px;
+  font-size: 24px;
+  border-radius: 0 25px 25px 0;
+}
+
+.del-btn{
+  max-height: 50px;
+}
+
+.active {  
+  opacity: 0.5; 
+}
+
+.inactive { 
+  opacity: 1; 
+}
+
+.container {
+  position: relative; 
+  display: block;
+  margin-bottom: 12px;  
+  padding-left: 35px;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.container input {
+  position: absolute;
+  height: 0;
+  width: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  border: 1px solid #E2D9D7;
+  border-radius: 5px;
+}
+
+.checkbox-value{
+  width: 100%;
+  font-size: 36px; 
+  text-align: left;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: #F1F0EF;
+  opacity: 0.3;
+}
+
+.checkmark:after {
+  position: absolute;
+  display: none;
+  content: "";
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+ul{
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid white;
+  color: white;
+}
+
+@media only screen and (max-width: 1100px) {
+  .App-content{
+    width: 500px;
+    padding: 15px;
+  }
+  .checkbox-value{
+    font-size: 24px; 
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .App-content{
+    width: 400px;
+  }
+  button{
+  font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .App-content{
+    width: 350px;
+  }
+  button{
+    font-size: 18px;
+  }
+  input[type="text"]{
+    font-size: 22px;
+  }
+  .add-btn{
+    font-size: 22px;
+  }
+}
